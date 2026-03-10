@@ -1,0 +1,9 @@
+from math import comb
+N = int(input())
+letters = input().split()
+K = int(input())
+C = letters.count('a')
+total_combinations = comb(N, K)
+ways_without_a = comb(N - C, K)
+probability = 1 - (ways_without_a / total_combinations)
+print(f"{probability:.4f}")
