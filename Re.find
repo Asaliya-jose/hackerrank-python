@@ -1,0 +1,10 @@
+import re
+v = "aeiou"
+c = "qwrtypsdfghjklzxcvbnm"
+pattern = r"(?<=[%s])([%s]{2,})(?=[%s])" % (c, v, c)
+match = re.findall(pattern, input(), re.I)
+if match:
+    for m in match:
+        print(m)
+else:
+    print(-1)
