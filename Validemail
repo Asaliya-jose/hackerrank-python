@@ -1,0 +1,13 @@
+import re
+import email.utils
+n = int(input())
+pattern = r'^[a-zA-Z][a-zA-Z0-9._-]*@[a-zA-Z]+\.[a-zA-Z]{1,3}$'
+
+for _ in range(n):
+    raw_input = input()
+    parsed_addr = email.utils.parseaddr(raw_input)
+    
+    email_str = parsed_addr[1]
+    
+    if re.match(pattern, email_str):
+        print(email.utils.formataddr(parsed_addr))
