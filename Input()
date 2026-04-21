@@ -1,0 +1,21 @@
+import sys
+
+def solve():
+    # Read x and k
+    line1 = sys.stdin.readline().split()
+    if not line1:
+        return
+    x, k = map(int, line1)
+    
+    # Read the polynomial string
+    poly = sys.stdin.readline().strip()
+    
+    # eval() evaluates the string expression using the current value of x
+    if eval(poly) == k:
+        print(True)
+    else:
+        print(False)
+
+if __name__ == "__main__":
+    solve()
+
