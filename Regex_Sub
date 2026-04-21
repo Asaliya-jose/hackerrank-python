@@ -1,0 +1,22 @@
+import re
+import sys
+
+def replace_logic(match):
+    if match.group(0) == '&&':
+        return 'and'
+    return 'or'
+
+def solve():
+    # Read number of lines
+    n = int(sys.stdin.readline())
+    for _ in range(n):
+        line = sys.stdin.readline().rstrip('\n')
+        pattern = r'(?<= )(&&|\|\|)(?= )'
+        
+        result = re.sub(pattern, replace_logic, line)
+        result = re.sub(pattern, replace_logic, result)
+        
+        print(result)
+
+if __name__ == "__main__":
+    solve()
